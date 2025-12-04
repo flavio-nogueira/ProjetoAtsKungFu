@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ApiAtsKungFu.Tests/bin/Debug/net10.0
+/ApiAtsKungFu.Tests/obj
+/WebApi/.vs/AtsKungFuApi/CopilotIndices/17.13.444.19527
