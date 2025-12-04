@@ -1,0 +1,82 @@
+<div class="layout-wrapper" [class.sidebar-collapsed]="sidebarCollapsed">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span class="logo-text">AtsKungFu</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li *ngFor="let item of menuItems" class="nav-item">
+          <a
+            class="nav-link"
+            [class.has-children]="item.children"
+            (click)="toggleMenuItem(item)">
+            <i [class]="item.icon"></i>
+            <span class="nav-text">{{ item.label }}</span>
+            <i *ngIf="item.children" class="fas fa-chevron-down submenu-icon" [class.rotated]="item.expanded"></i>
+          </a>
+
+          <ul *ngIf="item.children && item.expanded" class="submenu">
+            <li *ngFor="let child of item.children" class="submenu-item">
+              <a
+                [routerLink]="child.route"
+                routerLinkActive="active"
+                class="submenu-link">
+                <i [class]="child.icon"></i>
+                <span class="nav-text">{{ child.label }}</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <button class="btn btn-link sidebar-toggle" (click)="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="header-right">
+        <div class="user-menu dropdown">
+          <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <i class="fas fa-user-circle fa-lg"></i>
+            <span class="user-name">{{ authService.currentUserValue?.name }}</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="javascript:void(0)">
+                <i class="fas fa-user me-2"></i>Perfil
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="javascript:void(0)">
+                <i class="fas fa-cog me-2"></i>Configurações
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item" (click)="logout()" href="javascript:void(0)">
+                <i class="fas fa-sign-out-alt me-2"></i>Sair
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

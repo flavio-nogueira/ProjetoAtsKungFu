@@ -1,0 +1,197 @@
+<div class="page-header">
+  <div class="header-content">
+    <div>
+      <h2><i class="fas fa-book me-2"></i>Cadastro de Aulas</h2>
+      <p class="text-muted">Gerencie as aulas e horários</p>
+    </div>
+    <button class="btn btn-primary" (click)="openAddModal()">
+      <i class="fas fa-plus me-2"></i>Nova Aula
+    </button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar aula..."
+        [(ngModel)]="searchTerm">
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Disciplina</th>
+            <th>Professor</th>
+            <th>Turma</th>
+            <th>Dia da Semana</th>
+            <th>Horário</th>
+            <th>Sala</th>
+            <th class="text-center">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let aula of filteredAulas">
+            <td>{{ aula.id }}</td>
+            <td>
+              <div class="aula-info">
+                <i class="fas fa-chalkboard-teacher text-primary"></i>
+                <span class="fw-bold">{{ aula.titulo }}</span>
+              </div>
+            </td>
+            <td><span class="badge bg-secondary">{{ aula.disciplina }}</span></td>
+            <td>{{ aula.professor }}</td>
+            <td><span class="badge bg-info">{{ aula.turma }}</span></td>
+            <td>
+              <span class="badge" [ngClass]="'bg-' + getDayColor(aula.diaSemana)">
+                {{ aula.diaSemana }}
+              </span>
+            </td>
+            <td>
+              <span class="time-badge">
+                <i class="fas fa-clock me-1"></i>
+                {{ aula.horarioInicio }} - {{ aula.horarioFim }}
+              </span>
+            </td>
+            <td>
+              <i class="fas fa-door-open me-1 text-muted"></i>
+              {{ aula.sala }}
+            </td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-warning me-2" (click)="openEditModal(aula)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-sm btn-danger" (click)="deleteAula(aula.id)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="filteredAulas.length === 0">
+            <td colspan="9" class="text-center text-muted py-4">
+              <i class="fas fa-inbox fa-3x mb-3"></i>
+              <p>Nenhuma aula encontrada</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <i class="fas fa-book-open me-2"></i>
+          {{ isEditing ? 'Editar Aula' : 'Nova Aula' }}
+        </h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <form (ngSubmit)="saveAula()" #aulaForm="ngForm">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Título da Aula *</label>
+              <input
+                type="text"
+                class="form-control"
+                name="titulo"
+                [(ngModel)]="aula.titulo"
+                required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Disciplina *</label>
+              <input
+                type="text"
+                class="form-control"
+                name="disciplina"
+                [(ngModel)]="aula.disciplina"
+                required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Professor *</label>
+              <input
+                type="text"
+                class="form-control"
+                name="professor"
+                [(ngModel)]="aula.professor"
+                required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Turma *</label>
+              <input
+                type="text"
+                class="form-control"
+                name="turma"
+                [(ngModel)]="aula.turma"
+                required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Dia da Semana *</label>
+              <select
+                class="form-control"
+                name="diaSemana"
+                [(ngModel)]="aula.diaSemana"
+                required>
+                <option value="">Selecione...</option>
+                <option *ngFor="let dia of diasSemana" [value]="dia">{{ dia }}</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Sala *</label>
+              <input
+                type="text"
+                class="form-control"
+                name="sala"
+                [(ngModel)]="aula.sala"
+                required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Horário Início *</label>
+              <input
+                type="time"
+                class="form-control"
+                name="horarioInicio"
+                [(ngModel)]="aula.horarioInicio"
+                required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Horário Fim *</label>
+              <input
+                type="time"
+                class="form-control"
+                name="horarioFim"
+                [(ngModel)]="aula.horarioFim"
+                required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">
+            <i class="fas fa-times me-2"></i>Cancelar
+          </button>
+          <button type="submit" class="btn btn-primary" [disabled]="!aulaForm.form.valid">
+            <i class="fas fa-save me-2"></i>Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop" [class.show]="showModal" *ngIf="showModal"></div>
