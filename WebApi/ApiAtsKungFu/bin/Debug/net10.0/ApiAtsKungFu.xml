@@ -1,0 +1,1273 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiAtsKungFu</name>
+    </assembly>
+    <members>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.ChangePasswordDto">
+            <summary>
+            DTO para alterar senha (usuário autenticado)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.ChangePasswordDto.SenhaAtual">
+            <summary>
+            Senha atual
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.ChangePasswordDto.NovaSenha">
+            <summary>
+            Nova senha
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.ChangePasswordDto.ConfirmarNovaSenha">
+            <summary>
+            Confirmação da nova senha
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.ForgotPasswordDto">
+            <summary>
+            DTO para solicitar recuperação de senha
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.ForgotPasswordDto.Email">
+            <summary>
+            Email do usuário
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.LoginDto">
+            <summary>
+            DTO para login de usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.LoginDto.Email">
+            <summary>
+            Email do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.LoginDto.Senha">
+            <summary>
+            Senha do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.LoginDto.LembrarMe">
+            <summary>
+            Lembrar-me (token de refresh com validade maior)
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.RefreshTokenDto">
+            <summary>
+            DTO para renovação de token
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RefreshTokenDto.AccessToken">
+            <summary>
+            Access token expirado
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RefreshTokenDto.RefreshToken">
+            <summary>
+            Refresh token válido
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto">
+            <summary>
+            DTO para registro de novo usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto.NomeCompleto">
+            <summary>
+            Nome completo do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto.Email">
+            <summary>
+            Email do usuário (será usado como username)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto.CPF">
+            <summary>
+            CPF do usuário (opcional)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto.Telefone">
+            <summary>
+            Telefone/celular do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto.DataNascimento">
+            <summary>
+            Data de nascimento
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto.Senha">
+            <summary>
+            Senha do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto.ConfirmarSenha">
+            <summary>
+            Confirmação da senha
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.ResetPasswordDto">
+            <summary>
+            DTO para resetar senha com token
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.ResetPasswordDto.Email">
+            <summary>
+            Email do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.ResetPasswordDto.Token">
+            <summary>
+            Token de reset recebido por email
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.ResetPasswordDto.NovaSenha">
+            <summary>
+            Nova senha
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.ResetPasswordDto.ConfirmarNovaSenha">
+            <summary>
+            Confirmação da nova senha
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.RevokeTokenDto">
+            <summary>
+            DTO para revogar token (logout)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RevokeTokenDto.RefreshToken">
+            <summary>
+            Refresh token a ser revogado
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.RevokeTokenDto.Motivo">
+            <summary>
+            Motivo da revogação (opcional)
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.TokenResponseDto">
+            <summary>
+            DTO de resposta com tokens de autenticação
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.TokenResponseDto.AccessToken">
+            <summary>
+            Token JWT de acesso
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.TokenResponseDto.RefreshToken">
+            <summary>
+            Token de refresh para renovação
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.TokenResponseDto.TokenType">
+            <summary>
+            Tipo do token (sempre "Bearer")
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.TokenResponseDto.ExpiresIn">
+            <summary>
+            Tempo de expiração do access token em segundos
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.TokenResponseDto.ExpiresAt">
+            <summary>
+            Data/hora de expiração do token
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.TokenResponseDto.Usuario">
+            <summary>
+            Dados do usuário autenticado
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto">
+            <summary>
+            DTO com informações do usuário autenticado
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.Id">
+            <summary>
+            ID único do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.NomeCompleto">
+            <summary>
+            Nome completo do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.Email">
+            <summary>
+            Email do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.CPF">
+            <summary>
+            CPF do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.Telefone">
+            <summary>
+            Telefone do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.DataNascimento">
+            <summary>
+            Data de nascimento
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.FotoPerfil">
+            <summary>
+            URL da foto de perfil
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.EmailConfirmado">
+            <summary>
+            Indica se o email foi confirmado
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.TelefoneConfirmado">
+            <summary>
+            Indica se o telefone foi confirmado
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.DataCriacao">
+            <summary>
+            Data de criação da conta
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Application.DTOs.Auth.UsuarioDto.DataUltimoLogin">
+            <summary>
+            Data do último login
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.Interfaces.IAuthService">
+            <summary>
+            Interface de serviço de autenticação
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.RegistrarAsync(ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto,System.String,System.String)">
+            <summary>
+            Registra um novo usuário no sistema
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.LoginAsync(ApiAtsKungFu.Application.DTOs.Auth.LoginDto,System.String,System.String)">
+            <summary>
+            Realiza login de usuário e retorna tokens
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.RefreshTokenAsync(ApiAtsKungFu.Application.DTOs.Auth.RefreshTokenDto,System.String,System.String)">
+            <summary>
+            Renova o access token usando refresh token
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.RevogarTokenAsync(ApiAtsKungFu.Application.DTOs.Auth.RevokeTokenDto,System.String)">
+            <summary>
+            Revoga refresh token (logout)
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.SolicitarRecuperacaoSenhaAsync(ApiAtsKungFu.Application.DTOs.Auth.ForgotPasswordDto)">
+            <summary>
+            Solicita recuperação de senha (envia email com token)
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.ResetarSenhaAsync(ApiAtsKungFu.Application.DTOs.Auth.ResetPasswordDto)">
+            <summary>
+            Reseta senha com token recebido por email
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.AlterarSenhaAsync(System.Guid,ApiAtsKungFu.Application.DTOs.Auth.ChangePasswordDto)">
+            <summary>
+            Altera senha de usuário autenticado
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.ObterUsuarioAtualAsync(System.Guid)">
+            <summary>
+            Obtém informações do usuário autenticado
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Application.Interfaces.IAuthService.RevogarTodosTokensUsuarioAsync(System.Guid,System.String)">
+            <summary>
+            Revoga todos os tokens de um usuário
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Application.Services.AuthService">
+            <summary>
+            Serviço de autenticação com JWT e RefreshToken
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Common.Extensions.CorrelationIdExtensions">
+            <summary>
+            Extensions para gerenciar CorrelationId nas requisições
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Extensions.CorrelationIdExtensions.GetCorrelationId(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Obtém o CorrelationId da requisição atual
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Extensions.CorrelationIdExtensions.SetCorrelationId(Microsoft.AspNetCore.Http.HttpContext,System.String)">
+            <summary>
+            Define o CorrelationId na requisição atual
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Extensions.CorrelationIdExtensions.GetOrCreateCorrelationId(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Obtém ou gera um novo CorrelationId
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Common.Models.ApiResponse`1">
+            <summary>
+            Modelo de resposta padronizada da API
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ApiResponse`1.Sucesso">
+            <summary>
+            Indica se a operação foi bem-sucedida
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ApiResponse`1.Mensagem">
+            <summary>
+            Mensagem principal da resposta
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ApiResponse`1.DataExecucao">
+            <summary>
+            Data de execução da requisição (formato dd/MM/yyyy)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ApiResponse`1.HoraInicioExecucao">
+            <summary>
+            Hora de início da execução (formato HH:mm:ss)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ApiResponse`1.TempoExecucaoMilisegundos">
+            <summary>
+            Tempo de execução em milissegundos
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ApiResponse`1.StackTrace">
+            <summary>
+            Stack trace em caso de erro (null quando sucesso)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ApiResponse`1.Dados">
+            <summary>
+            Dados da resposta
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1">
+            <summary>
+            Builder para construir respostas padronizadas da API
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.ComSucesso(System.Boolean)">
+            <summary>
+            Define o sucesso da operação
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.ComMensagem(System.String)">
+            <summary>
+            Define a mensagem principal
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.ComDados(`0)">
+            <summary>
+            Define os dados da entidade
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.ComStatus(System.Int32)">
+            <summary>
+            Define o status HTTP
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.AdicionarMensagem(System.String,System.String)">
+            <summary>
+            Adiciona uma mensagem à lista de mensagens
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.ComStackTrace(System.String)">
+            <summary>
+            Define o stack trace em caso de erro
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.Build">
+            <summary>
+            Constrói a resposta final com o tempo de execução calculado
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.Sucesso(`0,System.String,System.Int32)">
+            <summary>
+            Cria uma resposta de sucesso padrão
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.Erro(System.String,System.Int32,System.String)">
+            <summary>
+            Cria uma resposta de erro padrão
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.Consulta(`0,System.String)">
+            <summary>
+            Cria uma resposta para consulta bem-sucedida
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.Inclusao(`0,System.String)">
+            <summary>
+            Cria uma resposta para inclusão bem-sucedida
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.Atualizacao(`0,System.String)">
+            <summary>
+            Cria uma resposta para atualização bem-sucedida
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Common.Models.ApiResponseBuilder`1.Exclusao(`0,System.String)">
+            <summary>
+            Cria uma resposta para exclusão bem-sucedida (retorna apenas o ID)
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Common.Models.ResponseData`1">
+            <summary>
+            Dados internos da resposta
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ResponseData`1.Entidade">
+            <summary>
+            Entidade ou dados retornados
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ResponseData`1.Sucesso">
+            <summary>
+            Indica sucesso da operação
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ResponseData`1.Mensagens">
+            <summary>
+            Lista de mensagens retornadas
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ResponseData`1.Status">
+            <summary>
+            Status HTTP da resposta
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Common.Models.ResponseMessage">
+            <summary>
+            Mensagem de resposta com código e descrição
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ResponseMessage.Codigo">
+            <summary>
+            Código da mensagem (Informacao, Aviso, Erro, etc)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Common.Models.ResponseMessage.Descricao">
+            <summary>
+            Descrição da mensagem
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Controllers.AuthController">
+            <summary>
+            Controller de autenticação e autorização
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.AuthController.Register(ApiAtsKungFu.Application.DTOs.Auth.RegisterUsuarioDto)">
+             <summary>
+             Registra um novo usuário no sistema
+             </summary>
+             <remarks>
+             Cria uma nova conta de usuário com email, senha e dados pessoais.
+            
+             Exemplo de requisição:
+            
+                 POST /api/Auth/register
+                 {
+                    "nomeCompleto": "João Silva",
+                    "email": "joao.silva@email.com",
+                    "cpf": "123.456.789-00",
+                    "telefone": "(11) 98765-4321",
+                    "dataNascimento": "1990-01-15",
+                    "senha": "SenhaForte@123",
+                    "confirmarSenha": "SenhaForte@123"
+                 }
+            
+             </remarks>
+             <param name="dto">Dados do novo usuário</param>
+             <returns>Tokens de autenticação e dados do usuário</returns>
+             <response code="201">Usuário criado com sucesso, retorna tokens</response>
+             <response code="400">Dados inválidos ou email já cadastrado</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.AuthController.Login(ApiAtsKungFu.Application.DTOs.Auth.LoginDto)">
+             <summary>
+             Realiza login de usuário
+             </summary>
+             <remarks>
+             Autentica um usuário e retorna tokens JWT para acesso à API.
+            
+             Exemplo de requisição:
+            
+                 POST /api/Auth/login
+                 {
+                    "email": "joao.silva@email.com",
+                    "senha": "SenhaForte@123",
+                    "lembrarMe": true
+                 }
+            
+             </remarks>
+             <param name="dto">Credenciais de login</param>
+             <returns>Tokens de autenticação e dados do usuário</returns>
+             <response code="200">Login realizado com sucesso</response>
+             <response code="401">Credenciais inválidas</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.AuthController.RefreshToken(ApiAtsKungFu.Application.DTOs.Auth.RefreshTokenDto)">
+             <summary>
+             Renova o access token usando refresh token
+             </summary>
+             <remarks>
+             Permite renovar um access token expirado usando um refresh token válido.
+             Implementa token rotation para maior segurança.
+            
+             Exemplo de requisição:
+            
+                 POST /api/Auth/refresh
+                 {
+                    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+                    "refreshToken": "CfDJ8O+..."
+                 }
+            
+             </remarks>
+             <param name="dto">Tokens para renovação</param>
+             <returns>Novos tokens de autenticação</returns>
+             <response code="200">Tokens renovados com sucesso</response>
+             <response code="401">Tokens inválidos ou expirados</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.AuthController.RevokeToken(ApiAtsKungFu.Application.DTOs.Auth.RevokeTokenDto)">
+             <summary>
+             Revoga refresh token (logout)
+             </summary>
+             <remarks>
+             Revoga um refresh token específico, efetivamente fazendo logout do dispositivo.
+            
+             Exemplo de requisição:
+            
+                 POST /api/Auth/revoke
+                 {
+                    "refreshToken": "CfDJ8O+...",
+                    "motivo": "Logout do usuário"
+                 }
+            
+             </remarks>
+             <param name="dto">Token a ser revogado</param>
+             <returns>Confirmação de revogação</returns>
+             <response code="200">Token revogado com sucesso</response>
+             <response code="400">Token inválido ou já revogado</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.AuthController.ForgotPassword(ApiAtsKungFu.Application.DTOs.Auth.ForgotPasswordDto)">
+             <summary>
+             Solicita recuperação de senha
+             </summary>
+             <remarks>
+             Envia um email com token para redefinição de senha.
+            
+             Exemplo de requisição:
+            
+                 POST /api/Auth/forgot-password
+                 {
+                    "email": "joao.silva@email.com"
+                 }
+            
+             </remarks>
+             <param name="dto">Email do usuário</param>
+             <returns>Mensagem de confirmação</returns>
+             <response code="200">Email de recuperação enviado (se existir)</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.AuthController.ResetPassword(ApiAtsKungFu.Application.DTOs.Auth.ResetPasswordDto)">
+             <summary>
+             Reseta senha com token recebido por email
+             </summary>
+             <remarks>
+             Permite redefinir a senha usando o token recebido por email.
+            
+             Exemplo de requisição:
+            
+                 POST /api/Auth/reset-password
+                 {
+                    "email": "joao.silva@email.com",
+                    "token": "CfDJ8O+...",
+                    "novaSenha": "NovaSenhaForte@123",
+                    "confirmarNovaSenha": "NovaSenhaForte@123"
+                 }
+            
+             </remarks>
+             <param name="dto">Dados para reset de senha</param>
+             <returns>Confirmação de senha alterada</returns>
+             <response code="200">Senha resetada com sucesso</response>
+             <response code="400">Token inválido ou expirado</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.AuthController.ChangePassword(ApiAtsKungFu.Application.DTOs.Auth.ChangePasswordDto)">
+             <summary>
+             Altera senha do usuário autenticado
+             </summary>
+             <remarks>
+             Permite que o usuário autenticado altere sua senha informando a senha atual.
+            
+             **Requer autenticação (Bearer token)**
+            
+             Exemplo de requisição:
+            
+                 POST /api/Auth/change-password
+                 Authorization: Bearer {seu_token}
+                 {
+                    "senhaAtual": "SenhaAtual@123",
+                    "novaSenha": "NovaSenhaForte@123",
+                    "confirmarNovaSenha": "NovaSenhaForte@123"
+                 }
+            
+             </remarks>
+             <param name="dto">Senhas para alteração</param>
+             <returns>Confirmação de senha alterada</returns>
+             <response code="200">Senha alterada com sucesso</response>
+             <response code="400">Senha atual incorreta</response>
+             <response code="401">Não autenticado</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.AuthController.Me">
+             <summary>
+             Obtém informações do usuário autenticado
+             </summary>
+             <remarks>
+             Retorna os dados completos do usuário logado.
+            
+             **Requer autenticação (Bearer token)**
+            
+             Exemplo de requisição:
+            
+                 GET /api/Auth/me
+                 Authorization: Bearer {seu_token}
+            
+             </remarks>
+             <returns>Dados do usuário autenticado</returns>
+             <response code="200">Retorna dados do usuário</response>
+             <response code="401">Não autenticado</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="T:ApiAtsKungFu.Controllers.EscolaKungFuController">
+            <summary>
+            Controller para gerenciamento de Escolas de Kung Fu (Matrizes e Filiais)
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.EscolaKungFuController.GetAll">
+             <summary>
+             Lista todas as escolas de Kung Fu cadastradas e ativas
+             </summary>
+             <remarks>
+             Retorna uma lista com todas as escolas (matrizes e filiais) que estão ativas no sistema.
+            
+             Exemplo de requisição:
+            
+                 GET /api/EscolaKungFu
+            
+             </remarks>
+             <returns>Lista de escolas ativas</returns>
+             <response code="200">Retorna a lista de escolas (pode ser vazia)</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.EscolaKungFuController.GetById(System.Guid)">
+             <summary>
+             Busca uma escola específica pelo ID (GUID)
+             </summary>
+             <remarks>
+             Retorna os dados completos de uma escola de Kung Fu identificada pelo GUID.
+            
+             Exemplo de requisição:
+            
+                 GET /api/EscolaKungFu/550e8400-e29b-41d4-a716-446655440000
+            
+             </remarks>
+             <param name="id">ID único da escola (formato GUID)</param>
+             <returns>Dados da escola</returns>
+             <response code="200">Retorna os dados da escola</response>
+             <response code="404">Escola não encontrada</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.EscolaKungFuController.GetMatrizes">
+             <summary>
+             Lista apenas as escolas matrizes
+             </summary>
+             <remarks>
+             Retorna apenas as escolas que são matrizes (não inclui filiais).
+            
+             Exemplo de requisição:
+            
+                 GET /api/EscolaKungFu/matrizes
+            
+             </remarks>
+             <returns>Lista de escolas matrizes</returns>
+             <response code="200">Retorna a lista de matrizes (pode ser vazia)</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.EscolaKungFuController.GetFiliais(System.Guid)">
+             <summary>
+             Lista as filiais de uma escola matriz específica
+             </summary>
+             <remarks>
+             Retorna todas as filiais vinculadas a uma escola matriz.
+            
+             Exemplo de requisição:
+            
+                 GET /api/EscolaKungFu/filiais/550e8400-e29b-41d4-a716-446655440000
+            
+             </remarks>
+             <param name="matrizId">ID da escola matriz (formato GUID)</param>
+             <returns>Lista de filiais da matriz</returns>
+             <response code="200">Retorna a lista de filiais (pode ser vazia)</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.EscolaKungFuController.GetByCNPJ(System.String)">
+             <summary>
+             Busca uma escola pelo CNPJ
+             </summary>
+             <remarks>
+             Retorna os dados de uma escola identificada pelo CNPJ.
+            
+             O CNPJ pode ser informado com ou sem formatação (pontos, barras e hífen).
+            
+             Exemplos de requisição:
+            
+                 GET /api/EscolaKungFu/cnpj/12.345.678/0001-90
+                 GET /api/EscolaKungFu/cnpj/12345678000190
+            
+             </remarks>
+             <param name="cnpj">CNPJ da escola (com ou sem formatação)</param>
+             <returns>Dados da escola</returns>
+             <response code="200">Retorna os dados da escola</response>
+             <response code="404">Escola não encontrada com o CNPJ informado</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.EscolaKungFuController.Create(ApiAtsKungFu.Application.DTOs.CreateEscolaKungFuDto)">
+             <summary>
+             Cadastra uma nova escola de Kung Fu (Matriz ou Filial)
+             </summary>
+             <remarks>
+             Cria um novo cadastro de escola de Kung Fu no sistema.
+            
+             **Campos obrigatórios:**
+             - tipo: "Matriz" ou "Filial"
+             - cnpj: CNPJ único (não pode estar cadastrado)
+             - razaoSocial: Razão social da empresa
+             - logradouro, numero, bairro, cidade, uf, cep: Endereço completo
+             - idUsuarioCadastrou: GUID do usuário que está criando o cadastro
+            
+             **Para Filiais:**
+             - idEmpresaMatriz: GUID da escola matriz (obrigatório)
+            
+             Exemplo de requisição (Matriz):
+            
+                 POST /api/EscolaKungFu
+                 {
+                    "tipo": "Matriz",
+                    "cnpj": "12.345.678/0001-90",
+                    "razaoSocial": "Academia de Kung Fu LTDA",
+                    "nomeFantasia": "Academia Master",
+                    "logradouro": "Rua das Artes Marciais",
+                    "numero": "100",
+                    "bairro": "Centro",
+                    "cidade": "São Paulo",
+                    "uf": "SP",
+                    "cep": "01234-567",
+                    "email": "contato@academia.com",
+                    "celularWhatsApp": "(11) 98765-4321",
+                    "idUsuarioCadastrou": "660e8400-e29b-41d4-a716-446655440000"
+                 }
+            
+             Exemplo de requisição (Filial):
+            
+                 POST /api/EscolaKungFu
+                 {
+                    "tipo": "Filial",
+                    "cnpj": "12.345.678/0002-71",
+                    "razaoSocial": "Academia de Kung Fu LTDA",
+                    "nomeFantasia": "Academia Master - Filial Centro",
+                    "idEmpresaMatriz": "550e8400-e29b-41d4-a716-446655440000",
+                    "logradouro": "Av. Paulista",
+                    "numero": "1500",
+                    "bairro": "Bela Vista",
+                    "cidade": "São Paulo",
+                    "uf": "SP",
+                    "cep": "01310-100",
+                    "idUsuarioCadastrou": "660e8400-e29b-41d4-a716-446655440000"
+                 }
+            
+             </remarks>
+             <param name="createDto">Dados da escola a ser criada</param>
+             <returns>Escola criada com ID gerado</returns>
+             <response code="201">Escola criada com sucesso</response>
+             <response code="400">Dados inválidos ou CNPJ já cadastrado</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.EscolaKungFuController.Update(System.Guid,ApiAtsKungFu.Application.DTOs.UpdateEscolaKungFuDto)">
+             <summary>
+             Atualiza os dados de uma escola existente
+             </summary>
+             <remarks>
+             Atualiza as informações cadastrais de uma escola.
+            
+             **Importante:**
+             - O ID da escola não pode ser alterado
+             - O CNPJ não pode ser alterado
+             - O tipo (Matriz/Filial) não pode ser alterado
+             - É obrigatório informar o idUsuarioAlterou
+            
+             **Campos obrigatórios:**
+             - razaoSocial
+             - logradouro, numero, bairro, cidade, uf, cep
+             - idUsuarioAlterou: GUID do usuário que está fazendo a alteração
+            
+             Exemplo de requisição:
+            
+                 PUT /api/EscolaKungFu/550e8400-e29b-41d4-a716-446655440000
+                 {
+                    "razaoSocial": "Academia de Kung Fu LTDA - Atualizada",
+                    "nomeFantasia": "Academia Master Premium",
+                    "logradouro": "Rua das Artes Marciais",
+                    "numero": "100-A",
+                    "bairro": "Centro",
+                    "cidade": "São Paulo",
+                    "uf": "SP",
+                    "cep": "01234-567",
+                    "pais": "Brasil",
+                    "email": "novo@academia.com",
+                    "celularWhatsApp": "(11) 98765-4321",
+                    "idUsuarioAlterou": "660e8400-e29b-41d4-a716-446655440001"
+                 }
+            
+             </remarks>
+             <param name="id">ID da escola a ser atualizada (GUID)</param>
+             <param name="updateDto">Dados atualizados da escola</param>
+             <returns>Escola atualizada</returns>
+             <response code="200">Escola atualizada com sucesso</response>
+             <response code="400">Dados inválidos</response>
+             <response code="404">Escola não encontrada</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.EscolaKungFuController.Delete(System.Guid)">
+             <summary>
+             Desativa uma escola (exclusão lógica/soft delete)
+             </summary>
+             <remarks>
+             Remove uma escola do cadastro ativo através de exclusão lógica (soft delete).
+            
+             **Importante:**
+             - A escola não é deletada fisicamente do banco de dados
+             - Apenas o campo "Ativo" é marcado como false
+             - Os dados permanecem no banco para fins de auditoria
+             - Escolas desativadas não aparecem nas listagens normais
+            
+             Exemplo de requisição:
+            
+                 DELETE /api/EscolaKungFu/550e8400-e29b-41d4-a716-446655440000
+            
+             </remarks>
+             <param name="id">ID da escola a ser desativada (GUID)</param>
+             <returns>Sem conteúdo</returns>
+             <response code="204">Escola desativada com sucesso</response>
+             <response code="404">Escola não encontrada</response>
+             <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="T:ApiAtsKungFu.Controllers.ExemploController">
+            <summary>
+            Controller de exemplo demonstrando o uso da resposta padronizada da API
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.ExemploController.GetTodos">
+            <summary>
+            Exemplo de consulta (GET) - Lista de items
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.ExemploController.GetPorId(System.String)">
+            <summary>
+            Exemplo de consulta (GET) por ID - Um único item
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.ExemploController.Post(ApiAtsKungFu.Controllers.TipoDestinoRequest)">
+            <summary>
+            Exemplo de inclusão (POST) - Retorna o objeto criado
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.ExemploController.Put(System.String,ApiAtsKungFu.Controllers.TipoDestinoRequest)">
+            <summary>
+            Exemplo de atualização (PUT) - Retorna o objeto atualizado
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.ExemploController.Delete(System.String)">
+            <summary>
+            Exemplo de exclusão (DELETE) - Retorna apenas o ID excluído
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Controllers.ExemploController.SimularErro">
+            <summary>
+            Exemplo de erro - Para testar o tratamento de exceções
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Controllers.TipoDestino">
+            <summary>
+            Modelo de exemplo para demonstração
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Controllers.TipoDestinoRequest">
+            <summary>
+            Request de exemplo
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Domain.Entities.ApplicationUser">
+            <summary>
+            Entidade de usuário da aplicação com campos personalizados
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.NomeCompleto">
+            <summary>
+            Nome completo do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.CPF">
+            <summary>
+            CPF do usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.DataNascimento">
+            <summary>
+            Data de nascimento
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.FotoPerfil">
+            <summary>
+            URL da foto de perfil
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.Ativo">
+            <summary>
+            Indica se o usuário está ativo no sistema
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.DataCriacao">
+            <summary>
+            Data de criação do registro
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.DataAlteracao">
+            <summary>
+            Data da última alteração
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.DataUltimoLogin">
+            <summary>
+            Data do último login
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.ApplicationUser.RefreshTokens">
+            <summary>
+            Coleção de tokens de refresh do usuário
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Domain.Entities.RefreshToken">
+            <summary>
+            Entidade para armazenar tokens de refresh com auditoria completa
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.Id">
+            <summary>
+            Identificador único do refresh token
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.UserId">
+            <summary>
+            ID do usuário proprietário do token
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.Token">
+            <summary>
+            Token de refresh criptografado
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.JwtId">
+            <summary>
+            Token JWT associado (armazenado para rastreabilidade)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.IsUsed">
+            <summary>
+            Indica se o token já foi usado
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.IsRevoked">
+            <summary>
+            Indica se o token foi revogado manualmente
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.DataCriacao">
+            <summary>
+            Data de criação do token
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.DataExpiracao">
+            <summary>
+            Data de expiração do refresh token
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.DataUso">
+            <summary>
+            Data em que o token foi usado (para refresh)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.DataRevogacao">
+            <summary>
+            Data em que o token foi revogado
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.IpAddress">
+            <summary>
+            IP do dispositivo que criou o token
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.UserAgent">
+            <summary>
+            User Agent do dispositivo
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.SubstituidoPorToken">
+            <summary>
+            Token que substituiu este (em caso de rotation)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.MotivoRevogacao">
+            <summary>
+            Motivo da revogação (se aplicável)
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.User">
+            <summary>
+            Navegação para o usuário
+            </summary>
+        </member>
+        <member name="P:ApiAtsKungFu.Domain.Entities.RefreshToken.IsValido">
+            <summary>
+            Verifica se o token é válido (não usado, não revogado, não expirado)
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.GeneratePasswordHash">
+            <summary>
+            Classe utilitária para gerar hash de senha
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Configuration.DependencyInjection.AddDatabase(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configura a conexão com o banco de dados MySQL
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Configuration.DependencyInjection.AddRepositories(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configura os repositórios da aplicação
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Configuration.DependencyInjection.AddApplicationServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configura os serviços da aplicação
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Configuration.DependencyInjection.AddIdentityConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configura o ASP.NET Core Identity
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Configuration.DependencyInjection.AddJwtAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configura autenticação JWT
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Configuration.DependencyInjection.AddAutoMapperConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configura o AutoMapper
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Configuration.DependencyInjection.AddSwaggerDocumentation(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configura o Swagger com documentação XML
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Configuration.DependencyInjection.AddInfrastructure(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configura todas as dependências da aplicação
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Infrastructure.Data.DatabaseSeeder">
+            <summary>
+            Classe para seed de dados iniciais do banco
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Data.DatabaseSeeder.SeedAdminUserAsync(System.IServiceProvider)">
+            <summary>
+            Cria o usuário administrador padrão do sistema
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Data.DatabaseSeeder.SeedRolesAsync(System.IServiceProvider)">
+            <summary>
+            Cria roles básicas do sistema
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Infrastructure.Data.DatabaseSeeder.ExecutarSeedsAsync(System.IServiceProvider)">
+            <summary>
+            Executa todos os seeds do sistema
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Middleware.GlobalExceptionHandlerMiddleware">
+            <summary>
+            Middleware para tratamento global de exceções
+            Garante que todas as exceções retornem no formato padronizado da API
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware">
+            <summary>
+            Middleware para logging completo de requisições e respostas
+            Registra: método, rota, query, headers, body, tempo de execução, correlationId, usuário
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware.ReadRequestBodyAsync(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Lê o body da requisição de forma assíncrona
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware.MaskSensitiveData(System.String)">
+            <summary>
+            Mascara dados sensíveis no payload JSON
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware.MaskJsonElement(System.Text.Json.JsonElement)">
+            <summary>
+            Mascara elementos sensíveis em um JsonElement recursivamente
+            </summary>
+        </member>
+        <member name="M:ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware.LogRequestResponse(Microsoft.AspNetCore.Http.HttpContext,System.String,System.String,System.String,System.Int64,System.DateTime,System.Exception)">
+            <summary>
+            Loga todas as informações da requisição e resposta
+            </summary>
+        </member>
+        <member name="T:ApiAtsKungFu.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ApiAtsKungFu.Migrations.MigracaoGuidComAuditoria">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.MigracaoGuidComAuditoria.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.MigracaoGuidComAuditoria.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.MigracaoGuidComAuditoria.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ApiAtsKungFu.Migrations.AdicionarIdentityEAuth">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.AdicionarIdentityEAuth.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.AdicionarIdentityEAuth.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.AdicionarIdentityEAuth.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ApiAtsKungFu.Migrations.SeedUsuarioAdminERoles">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.SeedUsuarioAdminERoles.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.SeedUsuarioAdminERoles.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.SeedUsuarioAdminERoles.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ApiAtsKungFu.Migrations.FixPasswordHash">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.FixPasswordHash.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.FixPasswordHash.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiAtsKungFu.Migrations.FixPasswordHash.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type)">
+            <summary>
+            Generates a documentation comment ID for a type.
+            Example: T:Namespace.Outer+Inner`1 becomes T:Namespace.Outer.Inner`1
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.PropertyInfo)">
+            <summary>
+            Generates a documentation comment ID for a property.
+            Example: P:Namespace.ContainingType.PropertyName or for an indexer P:Namespace.ContainingType.Item(System.Int32)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type,System.String)">
+            <summary>
+            Generates a documentation comment ID for a property given its container type and property name.
+            Example: P:Namespace.ContainingType.PropertyName
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.MethodInfo)">
+            <summary>
+            Generates a documentation comment ID for a method (or constructor).
+            For example:
+              M:Namespace.ContainingType.MethodName(ParamType1,ParamType2)~ReturnType
+              M:Namespace.ContainingType.#ctor(ParamType)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.GetTypeDocId(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Generates a documentation ID string for a type.
+            This method handles nested types (replacing '+' with '.'),
+            generic types, arrays, pointers, by-ref types, and generic parameters.
+            The <paramref name="includeGenericArguments"/> flag controls whether
+            constructed generic type arguments are emitted, while <paramref name="omitGenericArity"/>
+            controls whether the generic arity marker (e.g. "`1") is appended.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.NormalizeDocId(System.String)">
+            <summary>
+            Normalizes a documentation comment ID to match the compiler-style format.
+            Strips the return type suffix for ordinary methods but retains it for conversion operators.
+            </summary>
+            <param name="docId">The documentation comment ID to normalize.</param>
+            <returns>The normalized documentation comment ID.</returns>
+        </member>
+    </members>
+</doc>

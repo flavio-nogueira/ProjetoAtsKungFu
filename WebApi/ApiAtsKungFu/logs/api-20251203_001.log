@@ -1,0 +1,746 @@
+2025-12-03 18:49:54.976 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:49:55.258 -03:00 [FTL] API falhou ao iniciar {"Application":"ApiAtsKungFu"}
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Program.cs:line 39
+2025-12-03 18:51:27.176 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:51:27.450 -03:00 [FTL] API falhou ao iniciar {"Application":"ApiAtsKungFu"}
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Program.cs:line 39
+2025-12-03 18:52:02.054 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:52:02.337 -03:00 [FTL] API falhou ao iniciar {"Application":"ApiAtsKungFu"}
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Program.cs:line 39
+2025-12-03 18:52:38.237 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:52:38.554 -03:00 [INF] API AtsKungFu iniciada com sucesso {"Application":"ApiAtsKungFu"}
+2025-12-03 18:53:02.171 -03:00 [INF] Tentativa de login para: admin@atskungfu.com {"CorrelationId":"e06b5c93-1827-448d-9e67-67db5df8f574","ActionId":"59e42086-0390-4dae-9bde-e67e34110ad4","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMPAB640E:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMPAB640E","Application":"ApiAtsKungFu"}
+2025-12-03 18:53:02.914 -03:00 [INF] Executed DbCommand (43ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`Ativo`, `a`.`CPF`, `a`.`ConcurrencyStamp`, `a`.`DataAlteracao`, `a`.`DataCriacao`, `a`.`DataNascimento`, `a`.`DataUltimoLogin`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FotoPerfil`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NomeCompleto`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2 {"EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"59e42086-0390-4dae-9bde-e67e34110ad4","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMPAB640E:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMPAB640E","CorrelationId":"e06b5c93-1827-448d-9e67-67db5df8f574","Application":"ApiAtsKungFu"}
+2025-12-03 18:53:03.076 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`Ativo`, `a`.`CPF`, `a`.`ConcurrencyStamp`, `a`.`DataAlteracao`, `a`.`DataCriacao`, `a`.`DataNascimento`, `a`.`DataUltimoLogin`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FotoPerfil`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NomeCompleto`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
+LIMIT 1 {"EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"59e42086-0390-4dae-9bde-e67e34110ad4","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMPAB640E:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMPAB640E","CorrelationId":"e06b5c93-1827-448d-9e67-67db5df8f574","Application":"ApiAtsKungFu"}
+2025-12-03 18:53:03.098 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`Ativo`, `a`.`CPF`, `a`.`ConcurrencyStamp`, `a`.`DataAlteracao`, `a`.`DataCriacao`, `a`.`DataNascimento`, `a`.`DataUltimoLogin`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FotoPerfil`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NomeCompleto`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2 {"EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"59e42086-0390-4dae-9bde-e67e34110ad4","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMPAB640E:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMPAB640E","CorrelationId":"e06b5c93-1827-448d-9e67-67db5df8f574","Application":"ApiAtsKungFu"}
+2025-12-03 18:53:03.190 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[@p22='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 14), @p3='?' (Size = 4000), @p23='?' (Size = 4000), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (DbType = DateTime), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (Size = 500), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 200), @p14='?' (Size = 256), @p15='?' (Size = 256), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `AspNetUsers` SET `AccessFailedCount` = @p0, `Ativo` = @p1, `CPF` = @p2, `ConcurrencyStamp` = @p3, `DataAlteracao` = @p4, `DataCriacao` = @p5, `DataNascimento` = @p6, `DataUltimoLogin` = @p7, `Email` = @p8, `EmailConfirmed` = @p9, `FotoPerfil` = @p10, `LockoutEnabled` = @p11, `LockoutEnd` = @p12, `NomeCompleto` = @p13, `NormalizedEmail` = @p14, `NormalizedUserName` = @p15, `PasswordHash` = @p16, `PhoneNumber` = @p17, `PhoneNumberConfirmed` = @p18, `SecurityStamp` = @p19, `TwoFactorEnabled` = @p20, `UserName` = @p21
+WHERE `Id` = @p22 AND `ConcurrencyStamp` = @p23;
+SELECT ROW_COUNT(); {"EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"59e42086-0390-4dae-9bde-e67e34110ad4","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMPAB640E:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMPAB640E","CorrelationId":"e06b5c93-1827-448d-9e67-67db5df8f574","Application":"ApiAtsKungFu"}
+2025-12-03 18:53:03.199 -03:00 [INF] Login bem-sucedido para: "1958d7ed-2e18-40e5-9449-75a60664284b" - admin@atskungfu.com {"CorrelationId":"e06b5c93-1827-448d-9e67-67db5df8f574","ActionId":"59e42086-0390-4dae-9bde-e67e34110ad4","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMPAB640E:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMPAB640E","Application":"ApiAtsKungFu"}
+2025-12-03 18:53:03.313 -03:00 [INF] Executed DbCommand (33ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 50), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (Size = 100), @p9='?' (Size = 200), @p10='?' (DbType = Guid), @p11='?' (Size = 200), @p12='?' (Size = 500), @p13='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `RefreshTokens` (`Id`, `DataCriacao`, `DataExpiracao`, `DataRevogacao`, `DataUso`, `IpAddress`, `IsRevoked`, `IsUsed`, `JwtId`, `MotivoRevogacao`, `SubstituidoPorToken`, `Token`, `UserAgent`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13); {"EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"59e42086-0390-4dae-9bde-e67e34110ad4","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMPAB640E:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMPAB640E","CorrelationId":"e06b5c93-1827-448d-9e67-67db5df8f574","Application":"ApiAtsKungFu"}
+2025-12-03 18:53:03.342 -03:00 [INF] HTTP POST /api/Auth/login responded 200 in 1307.2811 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","CorrelationId":"e06b5c93-1827-448d-9e67-67db5df8f574","RequestId":"0HNHIMPAB640E:00000001","ConnectionId":"0HNHIMPAB640E","Application":"ApiAtsKungFu"}
+2025-12-03 18:53:03.352 -03:00 [INF] Requisição completada | Método: POST | Path: /api/Auth/login | QueryString:  | StatusCode: 200 | CorrelationId: e06b5c93-1827-448d-9e67-67db5df8f574 | Usuario: Anonymous | UserId: N/A | IP: ::1 | TempoExecucao: 1329ms | DataHora: 2025-12-03 18:53:02.013 | TamanhoResposta: 1054 bytes | RequestBody: {"email":"admin@atskungfu.com","senha":"***MASKED***","lembrarMe":true} | ResponseBody: {"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxOTU4ZDdlZC0yZTE4LTQwZTUtOTQ0OS03NWE2MDY2NDI4NGIiLCJ1bmlxdWVfbmFtZSI6ImFkbWluQGF0c2t1bmdmdS5jb20iLCJlbWFpbCI6ImFkbWluQGF0c2t1bmdmdS5jb20iLCJub21lX2NvbXBsZXRvIjoiRmxhdmlvIE5vZ3VlaXJhIEFkbWluIiwianRpIjoiYWZiYTk1MzQtOWY0Mi00NzA3LWFlYjYtMDkxNjdlZDFlYzk4IiwibmJmIjoxNzY0Nzk4NzgzLCJleHAiOjE3NjQ4MDIzODMsImlhdCI6MTc2NDc5ODc4MywiaXNzIjoiQXBpQXRzS3VuZ0Z1IiwiYXVkIjoiQXBpQXRzS3VuZ0Z1In0.U-175ap2DPsLP4ROZ9XVgVTZfsX0S0GEnWseZID36yw","refreshToken":"Iy07vjQhigwwSdzFmjodPenhAxjdpQmkPG1W2gXkGGYU1k844WIDSCQPm+Fqa5jd6DF8HRTWRDbqvOyVDp5FHg==","tokenType":"Bearer","expiresIn":3600,"expiresAt":"2025-12-03T22:53:03.2005304Z","usuario":{"id":"1958d7ed-2e18-40e5-9449-75a60664284b","nomeCompleto":"Flavio Nogueira Admin","email":"admin@atskungfu.com","cpf":"000.000.000-00","telefone":"(00) 00000-0000","dataNascimento":"1990-01-01T00:00:00","fotoPerfil":null,"emailConfirmado":false,"telefoneConfirmado":false,"dataCriacao":"2025-12-03T21:49:13.329648","dataUltimoLogin":"2025-12-03T21:53:03.0487318Z"}} | Headers: {"Accept":"application/json","Host":"localhost:7073","User-Agent":"curl/8.10.1","Content-Type":"application/json","Content-Length":"68"} {"SourceContext":"ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware","RequestId":"0HNHIMPAB640E:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMPAB640E","Application":"ApiAtsKungFu"}
+2025-12-03 18:55:57.064 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:55:57.326 -03:00 [FTL] API falhou ao iniciar {"Application":"ApiAtsKungFu"}
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Program.cs:line 39
+2025-12-03 18:56:29.916 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:56:30.231 -03:00 [INF] API AtsKungFu iniciada com sucesso {"Application":"ApiAtsKungFu"}
+2025-12-03 18:57:10.729 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:57:11.010 -03:00 [FTL] API falhou ao iniciar {"Application":"ApiAtsKungFu"}
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Program.cs:line 39
+2025-12-03 18:57:52.313 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:57:52.630 -03:00 [INF] API AtsKungFu iniciada com sucesso {"Application":"ApiAtsKungFu"}
+2025-12-03 18:58:17.414 -03:00 [INF] Tentando registrar novo usuário: flavio.nogueira.alfa@outlook.com.br {"CorrelationId":"e50a96f6-7da4-4673-9fa1-9b0faf64c7e8","ActionId":"4139cd0e-b6ba-481f-953e-cca30989f41a","ActionName":"ApiAtsKungFu.Controllers.AuthController.Register (ApiAtsKungFu)","RequestId":"0HNHIMS89IRG6:00000001","RequestPath":"/api/Auth/register","ConnectionId":"0HNHIMS89IRG6","Application":"ApiAtsKungFu"}
+2025-12-03 18:58:39.096 -03:00 [ERR] An error occurred using the connection to database 'dbatskungfu' on server '168.231.95.240'. {"EventId":{"Id":20004,"Name":"Microsoft.EntityFrameworkCore.Database.Connection.ConnectionError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Connection","ActionId":"4139cd0e-b6ba-481f-953e-cca30989f41a","ActionName":"ApiAtsKungFu.Controllers.AuthController.Register (ApiAtsKungFu)","RequestId":"0HNHIMS89IRG6:00000001","RequestPath":"/api/Auth/register","ConnectionId":"0HNHIMS89IRG6","CorrelationId":"e50a96f6-7da4-4673-9fa1-9b0faf64c7e8","Application":"ApiAtsKungFu"}
+2025-12-03 18:58:39.110 -03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'ApiAtsKungFu.Infrastructure.Data.AppDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call.
+ ---> MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() {"EventId":{"Id":10100,"Name":"Microsoft.EntityFrameworkCore.Query.QueryIterationFailed"},"SourceContext":"Microsoft.EntityFrameworkCore.Query","ActionId":"4139cd0e-b6ba-481f-953e-cca30989f41a","ActionName":"ApiAtsKungFu.Controllers.AuthController.Register (ApiAtsKungFu)","RequestId":"0HNHIMS89IRG6:00000001","RequestPath":"/api/Auth/register","ConnectionId":"0HNHIMS89IRG6","CorrelationId":"e50a96f6-7da4-4673-9fa1-9b0faf64c7e8","Application":"ApiAtsKungFu"}
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call.
+ ---> MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-12-03 18:58:39.127 -03:00 [INF] HTTP POST /api/Auth/register responded 400 in 21850.9980 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","CorrelationId":"e50a96f6-7da4-4673-9fa1-9b0faf64c7e8","RequestId":"0HNHIMS89IRG6:00000001","ConnectionId":"0HNHIMS89IRG6","Application":"ApiAtsKungFu"}
+2025-12-03 18:58:39.137 -03:00 [INF] Requisição completada | Método: POST | Path: /api/Auth/register | QueryString:  | StatusCode: 400 | CorrelationId: e50a96f6-7da4-4673-9fa1-9b0faf64c7e8 | Usuario: Anonymous | UserId: N/A | IP: ::1 | TempoExecucao: 21873ms | DataHora: 2025-12-03 18:58:17.256 | TamanhoResposta: 189 bytes | RequestBody: {"nomeCompleto":"Flavio Nogueira - Administrador","email":"flavio.nogueira.alfa@outlook.com.br","cpf":"123.456.789-00","telefone":"(11) 98765-4321","dataNascimento":"1990-01-15","senha":"***MASKED***","confirmarSenha":"***MASKED***"} | ResponseBody: {"message":"An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call."} | Headers: {"Accept":"*/*","Host":"localhost:7073","User-Agent":"curl/8.10.1","Content-Type":"application/json","Content-Length":"227"} {"SourceContext":"ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware","RequestId":"0HNHIMS89IRG6:00000001","RequestPath":"/api/Auth/register","ConnectionId":"0HNHIMS89IRG6","Application":"ApiAtsKungFu"}
+2025-12-03 18:59:29.535 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 18:59:29.808 -03:00 [FTL] API falhou ao iniciar {"Application":"ApiAtsKungFu"}
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Program.cs:line 39
+2025-12-03 19:01:11.426 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 19:01:11.700 -03:00 [FTL] API falhou ao iniciar {"Application":"ApiAtsKungFu"}
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Program.cs:line 39
+2025-12-03 19:01:50.490 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 19:01:50.802 -03:00 [INF] API AtsKungFu iniciada com sucesso {"Application":"ApiAtsKungFu"}
+2025-12-03 19:02:50.150 -03:00 [INF] Tentativa de login para: flavio.nogueira.alfa@outlook.com.br {"CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","Application":"ApiAtsKungFu"}
+2025-12-03 19:03:11.831 -03:00 [ERR] An error occurred using the connection to database 'dbatskungfu' on server '168.231.95.240'. {"EventId":{"Id":20004,"Name":"Microsoft.EntityFrameworkCore.Database.Connection.ConnectionError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Connection","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+2025-12-03 19:03:11.846 -03:00 [INF] A transient exception occurred during execution. The operation will be retried after 0ms.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken) {"EventId":{"Id":10404,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.ExecutionStrategyRetrying"},"SourceContext":"Microsoft.EntityFrameworkCore.Infrastructure","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+2025-12-03 19:03:32.871 -03:00 [ERR] An error occurred using the connection to database 'dbatskungfu' on server '168.231.95.240'. {"EventId":{"Id":20004,"Name":"Microsoft.EntityFrameworkCore.Database.Connection.ConnectionError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Connection","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+2025-12-03 19:03:32.873 -03:00 [INF] A transient exception occurred during execution. The operation will be retried after 1060ms.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken) {"EventId":{"Id":10404,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.ExecutionStrategyRetrying"},"SourceContext":"Microsoft.EntityFrameworkCore.Infrastructure","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+2025-12-03 19:03:54.992 -03:00 [ERR] An error occurred using the connection to database 'dbatskungfu' on server '168.231.95.240'. {"EventId":{"Id":20004,"Name":"Microsoft.EntityFrameworkCore.Database.Connection.ConnectionError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Connection","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+2025-12-03 19:03:54.994 -03:00 [INF] A transient exception occurred during execution. The operation will be retried after 3012ms.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken) {"EventId":{"Id":10404,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.ExecutionStrategyRetrying"},"SourceContext":"Microsoft.EntityFrameworkCore.Infrastructure","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+2025-12-03 19:04:19.052 -03:00 [ERR] An error occurred using the connection to database 'dbatskungfu' on server '168.231.95.240'. {"EventId":{"Id":20004,"Name":"Microsoft.EntityFrameworkCore.Database.Connection.ConnectionError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Connection","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+2025-12-03 19:04:19.053 -03:00 [INF] A transient exception occurred during execution. The operation will be retried after 7519ms.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken) {"EventId":{"Id":10404,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.ExecutionStrategyRetrying"},"SourceContext":"Microsoft.EntityFrameworkCore.Infrastructure","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+2025-12-03 19:04:33.832 -03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`Ativo`, `a`.`CPF`, `a`.`ConcurrencyStamp`, `a`.`DataAlteracao`, `a`.`DataCriacao`, `a`.`DataNascimento`, `a`.`DataUltimoLogin`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FotoPerfil`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NomeCompleto`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2 {"EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+2025-12-03 19:04:33.919 -03:00 [ERR] Erro ao fazer login {"SourceContext":"ApiAtsKungFu.Controllers.AuthController","ActionId":"75b2b790-f808-4554-b36a-a6b0c5bbb700","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","Application":"ApiAtsKungFu"}
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at Microsoft.AspNetCore.Identity.PasswordHasher`1.VerifyHashedPassword(TUser user, String hashedPassword, String providedPassword)
+   at Microsoft.AspNetCore.Identity.UserManager`1.VerifyPasswordAsync(IUserPasswordStore`1 store, TUser user, String password)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CheckPasswordCoreAsync(TUser user, String password)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CheckPasswordAsync(TUser user, String password)
+   at Microsoft.AspNetCore.Identity.SignInManager`1.CheckPasswordSignInCoreAsync(TUser user, String password, Boolean lockoutOnFailure)
+   at Microsoft.AspNetCore.Identity.SignInManager`1.CheckPasswordSignInAsync(TUser user, String password, Boolean lockoutOnFailure)
+   at ApiAtsKungFu.Application.Services.AuthService.LoginAsync(LoginDto dto, String ipAddress, String userAgent) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Application\Services\AuthService.cs:line 97
+   at ApiAtsKungFu.Controllers.AuthController.Login(LoginDto dto) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Controllers\AuthController.cs:line 109
+2025-12-03 19:04:33.934 -03:00 [ERR] HTTP POST /api/Auth/login responded 500 in 103917.2306 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","CorrelationId":"3a01b300-5fcf-4d6f-b614-6837617f226e","RequestId":"0HNHIMUPIKKDR:00000001","ConnectionId":"0HNHIMUPIKKDR","Application":"ApiAtsKungFu"}
+2025-12-03 19:04:33.941 -03:00 [INF] Requisição completada | Método: POST | Path: /api/Auth/login | QueryString:  | StatusCode: 500 | CorrelationId: 3a01b300-5fcf-4d6f-b614-6837617f226e | Usuario: Anonymous | UserId: N/A | IP: ::1 | TempoExecucao: 103937ms | DataHora: 2025-12-03 19:02:49.996 | TamanhoResposta: 33 bytes | RequestBody: {"email":"flavio.nogueira.alfa@outlook.com.br","senha":"***MASKED***","lembrarMe":true} | ResponseBody: {"message":"Erro ao fazer login"} | Headers: {"Accept":"application/json","Host":"localhost:7073","User-Agent":"curl/8.10.1","Content-Type":"application/json","Content-Length":"84"} {"SourceContext":"ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware","RequestId":"0HNHIMUPIKKDR:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIMUPIKKDR","Application":"ApiAtsKungFu"}
+2025-12-03 19:06:16.467 -03:00 [INF] Iniciando API AtsKungFu {"Application":"ApiAtsKungFu"}
+2025-12-03 19:06:16.783 -03:00 [INF] API AtsKungFu iniciada com sucesso {"Application":"ApiAtsKungFu"}
+2025-12-03 19:06:37.848 -03:00 [INF] Tentativa de login para: flavio.nogueira.alfa@outlook.com.br {"CorrelationId":"2330393e-1f28-4242-ac1a-fc02b61c0315","ActionId":"73dc0e00-b51a-4146-a912-2b37a2e75455","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIN0TDP37M:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIN0TDP37M","Application":"ApiAtsKungFu"}
+2025-12-03 19:06:59.690 -03:00 [ERR] An error occurred using the connection to database 'dbatskungfu' on server '168.231.95.240'. {"EventId":{"Id":20004,"Name":"Microsoft.EntityFrameworkCore.Database.Connection.ConnectionError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Connection","ActionId":"73dc0e00-b51a-4146-a912-2b37a2e75455","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIN0TDP37M:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIN0TDP37M","CorrelationId":"2330393e-1f28-4242-ac1a-fc02b61c0315","Application":"ApiAtsKungFu"}
+2025-12-03 19:06:59.705 -03:00 [INF] A transient exception occurred during execution. The operation will be retried after 0ms.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken) {"EventId":{"Id":10404,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.ExecutionStrategyRetrying"},"SourceContext":"Microsoft.EntityFrameworkCore.Infrastructure","ActionId":"73dc0e00-b51a-4146-a912-2b37a2e75455","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIN0TDP37M:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIN0TDP37M","CorrelationId":"2330393e-1f28-4242-ac1a-fc02b61c0315","Application":"ApiAtsKungFu"}
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+2025-12-03 19:07:20.730 -03:00 [ERR] An error occurred using the connection to database 'dbatskungfu' on server '168.231.95.240'. {"EventId":{"Id":20004,"Name":"Microsoft.EntityFrameworkCore.Database.Connection.ConnectionError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Connection","ActionId":"73dc0e00-b51a-4146-a912-2b37a2e75455","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIN0TDP37M:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIN0TDP37M","CorrelationId":"2330393e-1f28-4242-ac1a-fc02b61c0315","Application":"ApiAtsKungFu"}
+2025-12-03 19:07:20.732 -03:00 [INF] A transient exception occurred during execution. The operation will be retried after 1086ms.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken) {"EventId":{"Id":10404,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.ExecutionStrategyRetrying"},"SourceContext":"Microsoft.EntityFrameworkCore.Infrastructure","ActionId":"73dc0e00-b51a-4146-a912-2b37a2e75455","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIN0TDP37M:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIN0TDP37M","CorrelationId":"2330393e-1f28-4242-ac1a-fc02b61c0315","Application":"ApiAtsKungFu"}
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1283
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 427
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+2025-12-03 19:07:29.001 -03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`Ativo`, `a`.`CPF`, `a`.`ConcurrencyStamp`, `a`.`DataAlteracao`, `a`.`DataCriacao`, `a`.`DataNascimento`, `a`.`DataUltimoLogin`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FotoPerfil`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NomeCompleto`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2 {"EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"73dc0e00-b51a-4146-a912-2b37a2e75455","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIN0TDP37M:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIN0TDP37M","CorrelationId":"2330393e-1f28-4242-ac1a-fc02b61c0315","Application":"ApiAtsKungFu"}
+2025-12-03 19:07:29.125 -03:00 [ERR] Erro ao fazer login {"SourceContext":"ApiAtsKungFu.Controllers.AuthController","ActionId":"73dc0e00-b51a-4146-a912-2b37a2e75455","ActionName":"ApiAtsKungFu.Controllers.AuthController.Login (ApiAtsKungFu)","RequestId":"0HNHIN0TDP37M:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIN0TDP37M","CorrelationId":"2330393e-1f28-4242-ac1a-fc02b61c0315","Application":"ApiAtsKungFu"}
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at Microsoft.AspNetCore.Identity.PasswordHasher`1.VerifyHashedPassword(TUser user, String hashedPassword, String providedPassword)
+   at Microsoft.AspNetCore.Identity.UserManager`1.VerifyPasswordAsync(IUserPasswordStore`1 store, TUser user, String password)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CheckPasswordCoreAsync(TUser user, String password)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CheckPasswordAsync(TUser user, String password)
+   at Microsoft.AspNetCore.Identity.SignInManager`1.CheckPasswordSignInCoreAsync(TUser user, String password, Boolean lockoutOnFailure)
+   at Microsoft.AspNetCore.Identity.SignInManager`1.CheckPasswordSignInAsync(TUser user, String password, Boolean lockoutOnFailure)
+   at ApiAtsKungFu.Application.Services.AuthService.LoginAsync(LoginDto dto, String ipAddress, String userAgent) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Application\Services\AuthService.cs:line 97
+   at ApiAtsKungFu.Controllers.AuthController.Login(LoginDto dto) in c:\Desenvolvimento\ProjetoAtsKungFu\WebApi\ApiAtsKungFu\Controllers\AuthController.cs:line 109
+2025-12-03 19:07:29.147 -03:00 [ERR] HTTP POST /api/Auth/login responded 500 in 51446.4243 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","CorrelationId":"2330393e-1f28-4242-ac1a-fc02b61c0315","RequestId":"0HNHIN0TDP37M:00000001","ConnectionId":"0HNHIN0TDP37M","Application":"ApiAtsKungFu"}
+2025-12-03 19:07:29.160 -03:00 [INF] Requisição completada | Método: POST | Path: /api/Auth/login | QueryString:  | StatusCode: 500 | CorrelationId: 2330393e-1f28-4242-ac1a-fc02b61c0315 | Usuario: Anonymous | UserId: N/A | IP: ::1 | TempoExecucao: 51473ms | DataHora: 2025-12-03 19:06:37.677 | TamanhoResposta: 33 bytes | RequestBody: {"email":"flavio.nogueira.alfa@outlook.com.br","senha":"***MASKED***","lembrarMe":true} | ResponseBody: {"message":"Erro ao fazer login"} | Headers: {"Accept":"application/json","Host":"localhost:7073","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7","Content-Type":"application/json","Origin":"https://localhost:7073","Referer":"https://localhost:7073/swagger/index.html","Content-Length":"97","sec-ch-ua-platform":"\u0022Windows\u0022","sec-ch-ua":"\u0022Chromium\u0022;v=\u0022142\u0022, \u0022Google Chrome\u0022;v=\u0022142\u0022, \u0022Not_A Brand\u0022;v=\u002299\u0022","sec-ch-ua-mobile":"?0","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i","Cookie":"***MASKED***"} {"SourceContext":"ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware","RequestId":"0HNHIN0TDP37M:00000001","RequestPath":"/api/Auth/login","ConnectionId":"0HNHIN0TDP37M","Application":"ApiAtsKungFu"}
+2025-12-03 19:29:23.571 -03:00 [INF] HTTP GET /swagger/index.html responded 200 in 36.9175 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","CorrelationId":"26dfec70-9433-466c-b613-b7c8a3b39b89","RequestId":"0HNHIN0TDP37N:00000001","ConnectionId":"0HNHIN0TDP37N","Application":"ApiAtsKungFu"}
+2025-12-03 19:29:23.572 -03:00 [INF] Requisição completada | Método: GET | Path: /swagger/index.html | QueryString:  | StatusCode: 200 | CorrelationId: 26dfec70-9433-466c-b613-b7c8a3b39b89 | Usuario: Anonymous | UserId: N/A | IP: ::1 | TempoExecucao: 37ms | DataHora: 2025-12-03 19:29:23.534 | TamanhoResposta: 735 bytes | RequestBody:  | ResponseBody: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+       
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <script src="./swagger-ui-bundle.js" charset="utf-8"></script>
+    <script src="./swagger-ui-standalone-preset.js" charset="utf-8"></script>
+    <script src="index.js" charset="utf-8"></script>
+</body>
+</html>
+ | Headers: {"Accept":"text/html,application/xhtml\u002Bxml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","Host":"localhost:7073","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7","Cache-Control":"max-age=0","If-None-Match":"W/\u0022XpksuI7SK4ZUIzv9\u002BJEi7bNIY14=\u0022","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\u0022Chromium\u0022;v=\u0022142\u0022, \u0022Google Chrome\u0022;v=\u0022142\u0022, \u0022Not_A Brand\u0022;v=\u002299\u0022","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\u0022Windows\u0022","sec-fetch-site":"same-origin","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i","Cookie":"***MASKED***"} {"SourceContext":"ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware","RequestId":"0HNHIN0TDP37N:00000001","RequestPath":"/swagger/index.html","ConnectionId":"0HNHIN0TDP37N","Application":"ApiAtsKungFu"}
+2025-12-03 19:29:23.895 -03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 111.4712 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","CorrelationId":"a67b9126-3805-4c37-a410-bfc8c72da42a","RequestId":"0HNHIN0TDP37N:00000003","ConnectionId":"0HNHIN0TDP37N","Application":"ApiAtsKungFu"}
+2025-12-03 19:29:23.903 -03:00 [INF] Requisição completada | Método: GET | Path: /swagger/v1/swagger.json | QueryString:  | StatusCode: 200 | CorrelationId: a67b9126-3805-4c37-a410-bfc8c72da42a | Usuario: Anonymous | UserId: N/A | IP: ::1 | TempoExecucao: 111ms | DataHora: 2025-12-03 19:29:23.784 | TamanhoResposta: 66197 bytes | RequestBody:  | ResponseBody: {
+  "openapi": "3.0.4",
+  "info": {
+    "title": "ApiAtsKungFu",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Registra um novo usuário no sistema",
+        "description": "Cria uma nova conta de usuário com email, senha e dados pessoais.\r\n            \r\nExemplo de requisição:\r\n            \r\n    POST /api/Auth/register\r\n    {\r\n       \"nomeCompleto\": \"João Silva\",\r\n       \"email\": \"joao.silva@email.com\",\r\n       \"cpf\": \"123.456.789-00\",\r\n       \"telefone\": \"(11) 98765-4321\",\r\n       \"dataNascimento\": \"1990-01-15\",\r\n       \"senha\": \"SenhaForte@123\",\r\n       \"confirmarSenha\": \"SenhaForte@123\"\r\n    }",
+        "requestBody": {
+          "description": "Dados do novo usuário",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUsuarioDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUsuarioDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUsuarioDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso, retorna tokens",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos ou email já cadastrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Realiza login de usuário",
+        "description": "Autentica um usuário e retorna tokens JWT para acesso à API.\r\n            \r\nExemplo de requisição:\r\n            \r\n    POST /api/Auth/login\r\n    {\r\n       \"email\": \"joao.silva@email.com\",\r\n       \"senha\": \"SenhaForte@123\",\r\n       \"lembrarMe\": true\r\n    }",
+        "requestBody": {
+          "description": "Credenciais de login",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login realizado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponseDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Credenciais inválidas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/api/Auth/refresh": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Renova o access token usando refresh token",
+        "description": "Permite renovar um access token expirado usando um refresh token válido.\r\nImplementa token rotation para maior segurança.\r\n            \r\nExemplo de requisição:\r\n            \r\n    POST /api/Auth/refresh\r\n    {\r\n       \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\r\n       \"refreshToken\": \"CfDJ8O+...\"\r\n    }",
+        "requestBody": {
+          "description": "Tokens para renovação",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tokens renovados com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponseDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Tokens inválidos ou expirados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/api/Auth/revoke": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Revoga refresh token (logout)",
+        "description": "Revoga um refresh token específico, efetivamente fazendo logout do dispositivo.\r\n            \r\nExemplo de requisição:\r\n            \r\n    POST /api/Auth/revoke\r\n    {\r\n       \"refreshToken\": \"CfDJ8O+...\",\r\n       \"motivo\": \"Logout do usuário\"\r\n    }",
+        "requestBody": {
+          "description": "Token a ser revogado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeTokenDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeTokenDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeTokenDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Token revogado com sucesso"
+          },
+          "400": {
+            "description": "Token inválido ou já revogado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/api/Auth/forgot-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Solicita recuperação de senha",
+        "description": "Envia um email com token para redefinição de senha.\r\n            \r\nExemplo de requisição:\r\n            \r\n    POST /api/Auth/forgot-password\r\n    {\r\n       \"email\": \"joao.silva@email.com\"\r\n    }",
+        "requestBody": {
+          "description": "Email do usuário",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Email de recuperação enviado (se existir)"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/api/Auth/reset-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Reseta senha com token recebido por email",
+        "description": "Permite redefinir a senha usando o token recebido por email.\r\n            \r\nExemplo de requisição:\r\n            \r\n    POST /api/Auth/reset-password\r\n    {\r\n       \"email\": \"joao.silva@email.com\",\r\n       \"token\": \"CfDJ8O+...\",\r\n       \"novaSenha\": \"NovaSenhaForte@123\",\r\n       \"confirmarNovaSenha\": \"NovaSenhaForte@123\"\r\n    }",
+        "requestBody": {
+          "description": "Dados para reset de senha",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Senha resetada com sucesso"
+          },
+          "400": {
+            "description": "Token inválido ou expirado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/... (truncado, tamanho original: 66197 caracteres) | Headers: {"Accept":"application/json,*/*","Host":"localhost:7073","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7","Referer":"https://localhost:7073/swagger/index.html","sec-ch-ua-platform":"\u0022Windows\u0022","sec-ch-ua":"\u0022Chromium\u0022;v=\u0022142\u0022, \u0022Google Chrome\u0022;v=\u0022142\u0022, \u0022Not_A Brand\u0022;v=\u002299\u0022","sec-ch-ua-mobile":"?0","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i","Cookie":"***MASKED***"} {"SourceContext":"ApiAtsKungFu.Middleware.RequestResponseLoggingMiddleware","RequestId":"0HNHIN0TDP37N:00000003","RequestPath":"/swagger/v1/swagger.json","ConnectionId":"0HNHIN0TDP37N","Application":"ApiAtsKungFu"}

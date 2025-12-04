@@ -1,0 +1,1684 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ApiAtsKungFu | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:7073"
+    },
+    {
+      "url": "http://localhost:5099"
+    }
+  ],
+  "paths": {
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Registra um novo usuário no sistema",
+        "description": "Cria uma nova conta de usuário com email, senha e dados pessoais.\r\n\r\nExemplo de requisição:\r\n\r\n    POST /api/Auth/register\r\n    {\r\n       \"nomeCompleto\": \"João Silva\",\r\n       \"email\": \"joao.silva@email.com\",\r\n       \"cpf\": \"123.456.789-00\",\r\n       \"telefone\": \"(11) 98765-4321\",\r\n       \"dataNascimento\": \"1990-01-15\",\r\n       \"senha\": \"SenhaForte@123\",\r\n       \"confirmarSenha\": \"SenhaForte@123\"\r\n    }",
+        "requestBody": {
+          "description": "Dados do novo usuário",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUsuarioDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUsuarioDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUsuarioDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso, retorna tokens",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos ou email já cadastrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Realiza login de usuário",
+        "description": "Autentica um usuário e retorna tokens JWT para acesso à API.\r\n\r\nExemplo de requisição:\r\n\r\n    POST /api/Auth/login\r\n    {\r\n       \"email\": \"joao.silva@email.com\",\r\n       \"senha\": \"SenhaForte@123\",\r\n       \"lembrarMe\": true\r\n    }",
+        "requestBody": {
+          "description": "Credenciais de login",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Login realizado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponseDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Credenciais inválidas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/refresh": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Renova o access token usando refresh token",
+        "description": "Permite renovar um access token expirado usando um refresh token válido.\r\nImplementa token rotation para maior segurança.\r\n\r\nExemplo de requisição:\r\n\r\n    POST /api/Auth/refresh\r\n    {\r\n       \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\r\n       \"refreshToken\": \"CfDJ8O+...\"\r\n    }",
+        "requestBody": {
+          "description": "Tokens para renovação",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Tokens renovados com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponseDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Tokens inválidos ou expirados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/revoke": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Revoga refresh token (logout)",
+        "description": "Revoga um refresh token específico, efetivamente fazendo logout do dispositivo.\r\n\r\nExemplo de requisição:\r\n\r\n    POST /api/Auth/revoke\r\n    {\r\n       \"refreshToken\": \"CfDJ8O+...\",\r\n       \"motivo\": \"Logout do usuário\"\r\n    }",
+        "requestBody": {
+          "description": "Token a ser revogado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeTokenDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeTokenDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeTokenDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Token revogado com sucesso",
+            "content": {
+              "application/json": { }
+            }
+          },
+          "400": {
+            "description": "Token inválido ou já revogado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/forgot-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Solicita recuperação de senha",
+        "description": "Envia um email com token para redefinição de senha.\r\n\r\nExemplo de requisição:\r\n\r\n    POST /api/Auth/forgot-password\r\n    {\r\n       \"email\": \"joao.silva@email.com\"\r\n    }",
+        "requestBody": {
+          "description": "Email do usuário",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Email de recuperação enviado (se existir)",
+            "content": {
+              "application/json": { }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/reset-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Reseta senha com token recebido por email",
+        "description": "Permite redefinir a senha usando o token recebido por email.\r\n\r\nExemplo de requisição:\r\n\r\n    POST /api/Auth/reset-password\r\n    {\r\n       \"email\": \"joao.silva@email.com\",\r\n       \"token\": \"CfDJ8O+...\",\r\n       \"novaSenha\": \"NovaSenhaForte@123\",\r\n       \"confirmarNovaSenha\": \"NovaSenhaForte@123\"\r\n    }",
+        "requestBody": {
+          "description": "Dados para reset de senha",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Senha resetada com sucesso",
+            "content": {
+              "application/json": { }
+            }
+          },
+          "400": {
+            "description": "Token inválido ou expirado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/change-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Altera senha do usuário autenticado",
+        "description": "Permite que o usuário autenticado altere sua senha informando a senha atual.\r\n\r\n**Requer autenticação (Bearer token)**\r\n\r\nExemplo de requisição:\r\n\r\n    POST /api/Auth/change-password\r\n    Authorization: Bearer {seu_token}\r\n    {\r\n       \"senhaAtual\": \"SenhaAtual@123\",\r\n       \"novaSenha\": \"NovaSenhaForte@123\",\r\n       \"confirmarNovaSenha\": \"NovaSenhaForte@123\"\r\n    }",
+        "requestBody": {
+          "description": "Senhas para alteração",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Senha alterada com sucesso",
+            "content": {
+              "application/json": { }
+            }
+          },
+          "400": {
+            "description": "Senha atual incorreta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autenticado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/me": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Obtém informações do usuário autenticado",
+        "description": "Retorna os dados completos do usuário logado.\r\n\r\n**Requer autenticação (Bearer token)**\r\n\r\nExemplo de requisição:\r\n\r\n    GET /api/Auth/me\r\n    Authorization: Bearer {seu_token}",
+        "responses": {
+          "200": {
+            "description": "Retorna dados do usuário",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsuarioDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autenticado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/EscolaKungFu": {
+      "get": {
+        "tags": [
+          "EscolaKungFu"
+        ],
+        "summary": "Lista todas as escolas de Kung Fu cadastradas e ativas",
+        "description": "Retorna uma lista com todas as escolas (matrizes e filiais) que estão ativas no sistema.\r\n\r\nExemplo de requisição:\r\n\r\n    GET /api/EscolaKungFu",
+        "responses": {
+          "200": {
+            "description": "Retorna a lista de escolas (pode ser vazia)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EscolaKungFuDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "EscolaKungFu"
+        ],
+        "summary": "Cadastra uma nova escola de Kung Fu (Matriz ou Filial)",
+        "description": "Cria um novo cadastro de escola de Kung Fu no sistema.\r\n\r\n**Campos obrigatórios:**\r\n- tipo: \"Matriz\" ou \"Filial\"\r\n- cnpj: CNPJ único (não pode estar cadastrado)\r\n- razaoSocial: Razão social da empresa\r\n- logradouro, numero, bairro, cidade, uf, cep: Endereço completo\r\n- idUsuarioCadastrou: GUID do usuário que está criando o cadastro\r\n\r\n**Para Filiais:**\r\n- idEmpresaMatriz: GUID da escola matriz (obrigatório)\r\n\r\nExemplo de requisição (Matriz):\r\n\r\n    POST /api/EscolaKungFu\r\n    {\r\n       \"tipo\": \"Matriz\",\r\n       \"cnpj\": \"12.345.678/0001-90\",\r\n       \"razaoSocial\": \"Academia de Kung Fu LTDA\",\r\n       \"nomeFantasia\": \"Academia Master\",\r\n       \"logradouro\": \"Rua das Artes Marciais\",\r\n       \"numero\": \"100\",\r\n       \"bairro\": \"Centro\",\r\n       \"cidade\": \"São Paulo\",\r\n       \"uf\": \"SP\",\r\n       \"cep\": \"01234-567\",\r\n       \"email\": \"contato@academia.com\",\r\n       \"celularWhatsApp\": \"(11) 98765-4321\",\r\n       \"idUsuarioCadastrou\": \"660e8400-e29b-41d4-a716-446655440000\"\r\n    }\r\n\r\nExemplo de requisição (Filial):\r\n\r\n    POST /api/EscolaKungFu\r\n    {\r\n       \"tipo\": \"Filial\",\r\n       \"cnpj\": \"12.345.678/0002-71\",\r\n       \"razaoSocial\": \"Academia de Kung Fu LTDA\",\r\n       \"nomeFantasia\": \"Academia Master - Filial Centro\",\r\n       \"idEmpresaMatriz\": \"550e8400-e29b-41d4-a716-446655440000\",\r\n       \"logradouro\": \"Av. Paulista\",\r\n       \"numero\": \"1500\",\r\n       \"bairro\": \"Bela Vista\",\r\n       \"cidade\": \"São Paulo\",\r\n       \"uf\": \"SP\",\r\n       \"cep\": \"01310-100\",\r\n       \"idUsuarioCadastrou\": \"660e8400-e29b-41d4-a716-446655440000\"\r\n    }",
+        "requestBody": {
+          "description": "Dados da escola a ser criada",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEscolaKungFuDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEscolaKungFuDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEscolaKungFuDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Escola criada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EscolaKungFuDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos ou CNPJ já cadastrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/EscolaKungFu/{id}": {
+      "get": {
+        "tags": [
+          "EscolaKungFu"
+        ],
+        "summary": "Busca uma escola específica pelo ID (GUID)",
+        "description": "Retorna os dados completos de uma escola de Kung Fu identificada pelo GUID.\r\n\r\nExemplo de requisição:\r\n\r\n    GET /api/EscolaKungFu/550e8400-e29b-41d4-a716-446655440000",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID único da escola (formato GUID)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados da escola",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EscolaKungFuDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Escola não encontrada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "EscolaKungFu"
+        ],
+        "summary": "Atualiza os dados de uma escola existente",
+        "description": "Atualiza as informações cadastrais de uma escola.\r\n\r\n**Importante:**\r\n- O ID da escola não pode ser alterado\r\n- O CNPJ não pode ser alterado\r\n- O tipo (Matriz/Filial) não pode ser alterado\r\n- É obrigatório informar o idUsuarioAlterou\r\n\r\n**Campos obrigatórios:**\r\n- razaoSocial\r\n- logradouro, numero, bairro, cidade, uf, cep\r\n- idUsuarioAlterou: GUID do usuário que está fazendo a alteração\r\n\r\nExemplo de requisição:\r\n\r\n    PUT /api/EscolaKungFu/550e8400-e29b-41d4-a716-446655440000\r\n    {\r\n       \"razaoSocial\": \"Academia de Kung Fu LTDA - Atualizada\",\r\n       \"nomeFantasia\": \"Academia Master Premium\",\r\n       \"logradouro\": \"Rua das Artes Marciais\",\r\n       \"numero\": \"100-A\",\r\n       \"bairro\": \"Centro\",\r\n       \"cidade\": \"São Paulo\",\r\n       \"uf\": \"SP\",\r\n       \"cep\": \"01234-567\",\r\n       \"pais\": \"Brasil\",\r\n       \"email\": \"novo@academia.com\",\r\n       \"celularWhatsApp\": \"(11) 98765-4321\",\r\n       \"idUsuarioAlterou\": \"660e8400-e29b-41d4-a716-446655440001\"\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da escola a ser atualizada (GUID)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Dados atualizados da escola",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEscolaKungFuDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEscolaKungFuDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEscolaKungFuDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Escola atualizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EscolaKungFuDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Escola não encontrada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "EscolaKungFu"
+        ],
+        "summary": "Desativa uma escola (exclusão lógica/soft delete)",
+        "description": "Remove uma escola do cadastro ativo através de exclusão lógica (soft delete).\r\n\r\n**Importante:**\r\n- A escola não é deletada fisicamente do banco de dados\r\n- Apenas o campo \"Ativo\" é marcado como false\r\n- Os dados permanecem no banco para fins de auditoria\r\n- Escolas desativadas não aparecem nas listagens normais\r\n\r\nExemplo de requisição:\r\n\r\n    DELETE /api/EscolaKungFu/550e8400-e29b-41d4-a716-446655440000",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da escola a ser desativada (GUID)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Escola desativada com sucesso",
+            "content": {
+              "application/json": { }
+            }
+          },
+          "404": {
+            "description": "Escola não encontrada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/EscolaKungFu/matrizes": {
+      "get": {
+        "tags": [
+          "EscolaKungFu"
+        ],
+        "summary": "Lista apenas as escolas matrizes",
+        "description": "Retorna apenas as escolas que são matrizes (não inclui filiais).\r\n\r\nExemplo de requisição:\r\n\r\n    GET /api/EscolaKungFu/matrizes",
+        "responses": {
+          "200": {
+            "description": "Retorna a lista de matrizes (pode ser vazia)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EscolaKungFuDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/EscolaKungFu/filiais/{matrizId}": {
+      "get": {
+        "tags": [
+          "EscolaKungFu"
+        ],
+        "summary": "Lista as filiais de uma escola matriz específica",
+        "description": "Retorna todas as filiais vinculadas a uma escola matriz.\r\n\r\nExemplo de requisição:\r\n\r\n    GET /api/EscolaKungFu/filiais/550e8400-e29b-41d4-a716-446655440000",
+        "parameters": [
+          {
+            "name": "matrizId",
+            "in": "path",
+            "description": "ID da escola matriz (formato GUID)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna a lista de filiais (pode ser vazia)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EscolaKungFuDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    },
+    "/api/EscolaKungFu/cnpj/{cnpj}": {
+      "get": {
+        "tags": [
+          "EscolaKungFu"
+        ],
+        "summary": "Busca uma escola pelo CNPJ",
+        "description": "Retorna os dados de uma escola identificada pelo CNPJ.\r\n\r\nO CNPJ pode ser informado com ou sem formatação (pontos, barras e hífen).\r\n\r\nExemplos de requisição:\r\n\r\n    GET /api/EscolaKungFu/cnpj/12.345.678/0001-90\r\n    GET /api/EscolaKungFu/cnpj/12345678000190",
+        "parameters": [
+          {
+            "name": "cnpj",
+            "in": "path",
+            "description": "CNPJ da escola (com ou sem formatação)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados da escola",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EscolaKungFuDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Escola não encontrada com o CNPJ informado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": { }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ChangePasswordDto": {
+        "required": [
+          "senhaAtual",
+          "novaSenha",
+          "confirmarNovaSenha"
+        ],
+        "type": "object",
+        "properties": {
+          "senhaAtual": {
+            "type": "string",
+            "description": "Senha atual"
+          },
+          "novaSenha": {
+            "maxLength": 100,
+            "minLength": 6,
+            "type": "string",
+            "description": "Nova senha"
+          },
+          "confirmarNovaSenha": {
+            "type": "string",
+            "description": "Confirmação da nova senha"
+          }
+        },
+        "description": "DTO para alterar senha (usuário autenticado)"
+      },
+      "CreateEscolaKungFuDto": {
+        "required": [
+          "tipo",
+          "cnpj",
+          "razaoSocial",
+          "logradouro",
+          "numero",
+          "bairro",
+          "cidade",
+          "uf",
+          "cep",
+          "idUsuarioCadastrou"
+        ],
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string"
+          },
+          "cnpj": {
+            "maxLength": 18,
+            "minLength": 14,
+            "type": "string"
+          },
+          "razaoSocial": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "nomeFantasia": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "inscricaoEstadual": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "inscricaoMunicipal": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cnaePrincipal": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cnaeSecundarios": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "regimeTributario": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "logradouro": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "numero": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string"
+          },
+          "complemento": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "bairro": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "cidade": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "uf": {
+            "maxLength": 2,
+            "minLength": 2,
+            "type": "string"
+          },
+          "cep": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pais": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "telefoneFixo": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "celularWhatsApp": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "site": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "nomeResponsavel": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "quantidadeFiliais": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "inscricoesAutorizacoes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "idEmpresaMatriz": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "codigoFilial": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "idUsuarioCadastrou": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "EscolaKungFuDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipo": {
+            "type": "string"
+          },
+          "eMatriz": {
+            "type": "boolean"
+          },
+          "cnpj": {
+            "type": "string"
+          },
+          "razaoSocial": {
+            "type": "string"
+          },
+          "nomeFantasia": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "inscricaoEstadual": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "inscricaoMunicipal": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cnaePrincipal": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cnaeSecundarios": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "regimeTributario": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "logradouro": {
+            "type": "string"
+          },
+          "numero": {
+            "type": "string"
+          },
+          "complemento": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "bairro": {
+            "type": "string"
+          },
+          "cidade": {
+            "type": "string"
+          },
+          "uf": {
+            "type": "string"
+          },
+          "cep": {
+            "type": "string"
+          },
+          "pais": {
+            "type": "string"
+          },
+          "telefoneFixo": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "celularWhatsApp": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "email": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "site": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "nomeResponsavel": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "quantidadeFiliais": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "inscricoesAutorizacoes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "idEmpresaMatriz": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "codigoFilial": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "dataCriacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataAlteracao": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "ativo": {
+            "type": "boolean"
+          },
+          "cadastroAtivo": {
+            "type": "boolean"
+          },
+          "idUsuarioCadastrou": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idUsuarioAlterou": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          }
+        }
+      },
+      "ForgotPasswordDto": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Email do usuário"
+          }
+        },
+        "description": "DTO para solicitar recuperação de senha"
+      },
+      "LoginDto": {
+        "required": [
+          "email",
+          "senha"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Email do usuário"
+          },
+          "senha": {
+            "type": "string",
+            "description": "Senha do usuário"
+          },
+          "lembrarMe": {
+            "type": "boolean",
+            "description": "Lembrar-me (token de refresh com validade maior)"
+          }
+        },
+        "description": "DTO para login de usuário"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "status": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "detail": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "instance": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "RefreshTokenDto": {
+        "required": [
+          "accessToken",
+          "refreshToken"
+        ],
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string",
+            "description": "Access token expirado"
+          },
+          "refreshToken": {
+            "type": "string",
+            "description": "Refresh token válido"
+          }
+        },
+        "description": "DTO para renovação de token"
+      },
+      "RegisterUsuarioDto": {
+        "required": [
+          "nomeCompleto",
+          "email",
+          "senha",
+          "confirmarSenha"
+        ],
+        "type": "object",
+        "properties": {
+          "nomeCompleto": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "description": "Nome completo do usuário"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email do usuário (será usado como username)"
+          },
+          "cpf": {
+            "maxLength": 14,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "CPF do usuário (opcional)"
+          },
+          "telefone": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Telefone/celular do usuário"
+          },
+          "dataNascimento": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Data de nascimento",
+            "format": "date-time"
+          },
+          "senha": {
+            "maxLength": 100,
+            "minLength": 6,
+            "type": "string",
+            "description": "Senha do usuário"
+          },
+          "confirmarSenha": {
+            "type": "string",
+            "description": "Confirmação da senha"
+          }
+        },
+        "description": "DTO para registro de novo usuário"
+      },
+      "ResetPasswordDto": {
+        "required": [
+          "email",
+          "token",
+          "novaSenha",
+          "confirmarNovaSenha"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Email do usuário"
+          },
+          "token": {
+            "type": "string",
+            "description": "Token de reset recebido por email"
+          },
+          "novaSenha": {
+            "maxLength": 100,
+            "minLength": 6,
+            "type": "string",
+            "description": "Nova senha"
+          },
+          "confirmarNovaSenha": {
+            "type": "string",
+            "description": "Confirmação da nova senha"
+          }
+        },
+        "description": "DTO para resetar senha com token"
+      },
+      "RevokeTokenDto": {
+        "required": [
+          "refreshToken"
+        ],
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string",
+            "description": "Refresh token a ser revogado"
+          },
+          "motivo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Motivo da revogação (opcional)"
+          }
+        },
+        "description": "DTO para revogar token (logout)"
+      },
+      "TokenResponseDto": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string",
+            "description": "Token JWT de acesso"
+          },
+          "refreshToken": {
+            "type": "string",
+            "description": "Token de refresh para renovação"
+          },
+          "tokenType": {
+            "type": "string",
+            "description": "Tipo do token (sempre \"Bearer\")"
+          },
+          "expiresIn": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "description": "Tempo de expiração do access token em segundos",
+            "format": "int32"
+          },
+          "expiresAt": {
+            "type": "string",
+            "description": "Data/hora de expiração do token",
+            "format": "date-time"
+          },
+          "usuario": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Dados do usuário autenticado",
+                "$ref": "#/components/schemas/UsuarioDto"
+              }
+            ]
+          }
+        },
+        "description": "DTO de resposta com tokens de autenticação"
+      },
+      "UpdateEscolaKungFuDto": {
+        "required": [
+          "razaoSocial",
+          "logradouro",
+          "numero",
+          "bairro",
+          "cidade",
+          "uf",
+          "cep",
+          "idUsuarioAlterou"
+        ],
+        "type": "object",
+        "properties": {
+          "razaoSocial": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "nomeFantasia": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "inscricaoEstadual": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "inscricaoMunicipal": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cnaePrincipal": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cnaeSecundarios": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "regimeTributario": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "logradouro": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "numero": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string"
+          },
+          "complemento": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "bairro": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "cidade": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "uf": {
+            "maxLength": 2,
+            "minLength": 2,
+            "type": "string"
+          },
+          "cep": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pais": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "telefoneFixo": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "celularWhatsApp": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "site": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "nomeResponsavel": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "idUsuarioAlterou": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "UsuarioDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID único do usuário",
+            "format": "uuid"
+          },
+          "nomeCompleto": {
+            "type": "string",
+            "description": "Nome completo do usuário"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email do usuário"
+          },
+          "cpf": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "CPF do usuário"
+          },
+          "telefone": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Telefone do usuário"
+          },
+          "dataNascimento": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Data de nascimento",
+            "format": "date-time"
+          },
+          "fotoPerfil": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "URL da foto de perfil"
+          },
+          "emailConfirmado": {
+            "type": "boolean",
+            "description": "Indica se o email foi confirmado"
+          },
+          "telefoneConfirmado": {
+            "type": "boolean",
+            "description": "Indica se o telefone foi confirmado"
+          },
+          "dataCriacao": {
+            "type": "string",
+            "description": "Data de criação da conta",
+            "format": "date-time"
+          },
+          "dataUltimoLogin": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Data do último login",
+            "format": "date-time"
+          }
+        },
+        "description": "DTO com informações do usuário autenticado"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "EscolaKungFu"
+    }
+  ]
+}
